@@ -1,10 +1,10 @@
 ﻿using PaymentGateway.Api.Enums;
 
-namespace PaymentGateway.Api.Models.Responses;
+namespace PaymentGateway.Api.Models.Repositories;
 
-public class PostPaymentResponse
+public class Payment
 {
-    public Guid? Id { get; set; }
+    public Guid Id { get; set; }
     public PaymentStatus Status { get; set; }
     public string CardNumberLastFour { get; set; }
     public int ExpiryMonth { get; set; }

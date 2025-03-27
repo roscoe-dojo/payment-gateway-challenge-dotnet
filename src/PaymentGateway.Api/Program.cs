@@ -1,4 +1,9 @@
-using PaymentGateway.Api.Services;
+using FluentValidation;
+
+using PaymentGateway.Api.HttpClients;
+using PaymentGateway.Api.Models.Requests;
+using PaymentGateway.Api.Models.Validators;
+using PaymentGateway.Api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +14,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<PaymentsRepository>();
+builder.Services.AddSingleton<IPaymentsRepository, PaymentsRepository>();
+
+builder.Services.AddScoped<IValidator<PostPaymentRequest>, PostPaymentRequestValidator>();
+
+builder.Services.AddHttpClient<IAcquiringBankHttpClient, AcquiringBankHttpClient>(cilent =>
+{
+    cilent.BaseAddress = builder.Configuration.GetSection("AcquiringBank:BaseUrl").Get<Uri>();
+});
 
 var app = builder.Build();
 
@@ -27,3 +39,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
