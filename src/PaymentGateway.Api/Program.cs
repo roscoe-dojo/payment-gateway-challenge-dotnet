@@ -4,6 +4,7 @@ using PaymentGateway.Api.HttpClients;
 using PaymentGateway.Api.Models.Requests;
 using PaymentGateway.Api.Models.Validators;
 using PaymentGateway.Api.Repositories;
+using PaymentGateway.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IPaymentsRepository, PaymentsRepository>();
+builder.Services.AddSingleton<IPaymentsGatewayService, PaymentsGatewayService>();
 
 builder.Services.AddScoped<IValidator<PostPaymentRequest>, PostPaymentRequestValidator>();
 
