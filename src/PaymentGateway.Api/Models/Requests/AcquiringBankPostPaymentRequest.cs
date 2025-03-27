@@ -1,17 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace PaymentGateway.Api.Models.Requests;
 
 public class AcquiringBankPostPaymentRequest
 {
-    [JsonProperty("card_number")]
+    [JsonPropertyName("card_number")]
     public string CardNumber { get; set; }
-    [JsonProperty("expiry_date")]
+    [JsonPropertyName("expiry_date")]
     public string ExpiryDate { get; set; }
-    [JsonProperty("currency")]
+    [JsonPropertyName("currency")]
     public string Currency  { get; set; }
-    [JsonProperty("amount")]
+    [JsonPropertyName("amount")]
     public int Amount  { get; set; }
-    [JsonProperty("cvv")]
+    [JsonPropertyName("cvv")]
     public string Cvv { get; set; }
 }

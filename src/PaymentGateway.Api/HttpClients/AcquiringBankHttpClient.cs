@@ -6,7 +6,6 @@ namespace PaymentGateway.Api.HttpClients;
 public class AcquiringBankHttpClient : IAcquiringBankHttpClient
 {
     private readonly HttpClient _httpClient;
-
     private const string postPaymentEndpoint = "payments";
 
     public AcquiringBankHttpClient(HttpClient httpClient)

@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace PaymentGateway.Api.Models.Responses;
 
 public class AcquiringBankPostPaymentResponse
 {
-    [JsonProperty("authorized")]
+    [JsonPropertyName("authorized")]
     public bool Authorized { get; set; }
-    [JsonProperty("authorization_code")]
+    [JsonPropertyName("authorization_code")]
     public Guid? AuthorizationCode { get; set; }
 }

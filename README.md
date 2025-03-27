@@ -46,7 +46,8 @@ Both rule-level and class-level cascade modes are employed.
 
 ## Models
 I have separated the models into requests and responses, while having the repository documents have their own schemas.
-This allows for the service to wrap the responses/requests with extra information and metadata if required in the future and ensures the serialisation is expected by using Newtonsoft.
+This allows for the service to wrap the responses/requests with extra information and metadata if required in the future.
+Serialisation of property names is handled in these classes as well.
 
 ## Testing Strategy
 Unit testing validates each layer and logical pathway within each method in each class in isolation.
