@@ -50,7 +50,8 @@ This allows for the service to wrap the responses/requests with extra informatio
 
 ## Testing Strategy
 Unit testing validates each layer and logical pathway within each method in each class in isolation.
-Integration tests spins up a test server in-memory. Validation of the full request to response pipeline, testing common scenarios.
+
+Integration tests spins up a test server in-memory using WebApplicationFactory. Integration tests include testing of validation of the full request to response pipeline and common scenarios and use cases.
 
 ## Future modifications
 Add authentication via FromHeader on each endpoint to ensure only verifed users can hit the endpoint.
