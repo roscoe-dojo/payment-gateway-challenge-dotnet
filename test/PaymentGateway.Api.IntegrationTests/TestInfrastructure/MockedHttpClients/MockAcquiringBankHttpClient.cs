@@ -11,7 +11,7 @@ public class MockAcquiringBankHttpClient : IAcquiringBankHttpClient
         return Task.FromResult<AcquiringBankPostPaymentResponse?>(new AcquiringBankPostPaymentResponse
         {
             Authorized = true,
-            AuthorizationCode = Guid.NewGuid()
+            AuthorizationCode = Guid.NewGuid().ToString()
         });
     }
 }

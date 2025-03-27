@@ -105,11 +105,9 @@ public class PaymentsGatewayServiceTests
             Cvv = "000"
         };
 
-        Guid? authCode = authCodeString != null ? Guid.Parse(authCodeString) : (Guid?)null;
-
         var bankResponse = new AcquiringBankPostPaymentResponse
         {
-            AuthorizationCode = authCode,
+            AuthorizationCode = authCodeString,
             Authorized = authorized
         };
 
@@ -122,7 +120,7 @@ public class PaymentsGatewayServiceTests
 
         // Assert
         result.Status.Should().Be(expectedStatus);
-        result.Id.Should().Be(authCode);
+        result.Id.Should().Be(authCodeString);
         result.CardNumberLastFour.Should().Be("6666");
         result.ExpiryMonth.Should().Be(11);
         result.ExpiryYear.Should().Be(2030);

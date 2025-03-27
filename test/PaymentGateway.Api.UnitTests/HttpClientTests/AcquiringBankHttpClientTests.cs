@@ -40,7 +40,7 @@ public class AcquiringBankHttpClientTests
         var expectedResponse = new AcquiringBankPostPaymentResponse
         {
             Authorized = true,
-            AuthorizationCode = Guid.NewGuid()
+            AuthorizationCode = Guid.NewGuid().ToString()
         };
 
         var httpClient = CreateHttpClient(new HttpResponseMessage

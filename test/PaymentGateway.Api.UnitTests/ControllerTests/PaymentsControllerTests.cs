@@ -86,7 +86,7 @@ namespace PaymentGateway.Api.UnitTests.ControllerTests
             // Arrange
             var request = new PostPaymentRequest { CardNumber = "1234567812345678" };
             var validationResult = new ValidationResult();
-            var authorizationId = Guid.NewGuid();
+            var authorizationId = Guid.NewGuid().ToString();
             var response = new PostPaymentResponse { Id = authorizationId, Status = PaymentStatus.Authorized };
 
             _validatorMock.Setup(v => v.ValidateAsync(request, It.IsAny<CancellationToken>()))

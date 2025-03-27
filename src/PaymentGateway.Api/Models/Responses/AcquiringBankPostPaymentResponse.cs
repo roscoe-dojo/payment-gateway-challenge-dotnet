@@ -7,5 +7,5 @@ public class AcquiringBankPostPaymentResponse
     [JsonPropertyName("authorized")]
     public bool Authorized { get; set; }
     [JsonPropertyName("authorization_code")]
-    public Guid? AuthorizationCode { get; set; }
+    public string AuthorizationCode { get; set; }
 }
