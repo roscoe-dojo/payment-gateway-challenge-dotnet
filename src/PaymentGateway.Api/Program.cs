@@ -16,7 +16,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IPaymentsRepository, PaymentsRepository>();
-builder.Services.AddSingleton<IPaymentsGatewayService, PaymentsGatewayService>();
+builder.Services.AddScoped<IPaymentsGatewayService, PaymentsGatewayService>();
 
 builder.Services.AddScoped<IValidator<PostPaymentRequest>, PostPaymentRequestValidator>();
 
